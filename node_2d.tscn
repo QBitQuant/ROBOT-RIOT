@@ -1,3 +1,61 @@
-[gd_scene format=3 uid="uid://br0nh668rs05c"]
+[gd_scene load_steps=6 format=3 uid="uid://br0nh668rs05c"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://c530nqy8210qe" path="res://unnamed.jpg" id="1_woe0h"]
+[ext_resource type="FontFile" uid="uid://cjwe4pd5cs8wm" path="res://Jersey15-Regular.woff2" id="2_xw8ec"]
+
+[sub_resource type="FontVariation" id="FontVariation_xshkf"]
+base_font = ExtResource("2_xw8ec")
+
+[sub_resource type="LabelSettings" id="LabelSettings_toh17"]
+font = SubResource("FontVariation_xshkf")
+font_size = 200
+
+[sub_resource type="LabelSettings" id="LabelSettings_f55dx"]
+font = SubResource("FontVariation_xshkf")
+font_size = 30
+
+[node name="StartSplash" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_top = -1.0
+offset_right = 1150.0
+offset_bottom = 645.0
+texture = ExtResource("1_woe0h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/TextureRect"]
+speed_scale = 0.521
+
+[node name="Label1 ROBOT-RIOT" type="Label" parent="CanvasLayer"]
+offset_left = -50.0
+offset_right = 1084.0
+offset_bottom = 201.0
+text = "ROBOT-RIOT
+"
+label_settings = SubResource("LabelSettings_toh17")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+uppercase = true
+
+[node name="Label2 VERSION" type="Label" parent="CanvasLayer"]
+offset_left = -4.0
+offset_top = 74.0
+offset_right = 1130.0
+offset_bottom = 221.0
+text = "
+
+Alpha 0.0.1"
+label_settings = SubResource("LabelSettings_f55dx")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+uppercase = true
+
+[node name="StartButton" type="Button" parent="CanvasLayer"]
+offset_left = 442.0
+offset_top = 327.0
+offset_right = 706.0
+offset_bottom = 404.0
+text = "START"

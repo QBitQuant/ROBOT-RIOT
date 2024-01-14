@@ -1,4 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1705117132
+::res://::1705182136
+galletcity.png::CompressedTexture2D::1472435648935721575::1520112757::1705182495::1::::<><>::
+galletcity_tiles.png::CompressedTexture2D::8519484356039277937::1520112772::1705182495::1::::<><>::
 icon.svg::CompressedTexture2D::3185503093417394736::1705117127::1705117132::1::::<><>::
-README.md::TextFile::-1::1705117055::0::1::::<><>::
+Jersey15-Regular.woff2::FontFile::5450252720563263660::1705017470::1705180013::1::::<><>::
+node_2d.tscn::PackedScene::3632043968490059746::1705181629::0::1::::<><>::uid://c530nqy8210qe::::res://unnamed.jpg<>uid://cjwe4pd5cs8wm::::res://Jersey15-Regular.woff2
+README.md::TextFile::-1::1705164832::0::1::::<><>::
+unnamed.jpg::CompressedTexture2D::6937851272766182312::1705178160::1705178160::1::::<><>::
