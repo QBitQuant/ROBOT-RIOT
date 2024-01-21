@@ -21,6 +21,8 @@ func _on_area_entered(area):
 						area.tempdisable()
 			var damage = area.damage
 			emit_signal("hurt", damage)
+			if area.has_method("enemy_hit"):
+				area.enemy_hit(1)
 
 func _on_disable_timer_timeout():
 	Collision.call_deferred("set", "disabled", false)

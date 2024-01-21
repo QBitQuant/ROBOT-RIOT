@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuymqm70kvx2g"]
+[gd_scene load_steps=7 format=3 uid="uid://cuymqm70kvx2g"]
 
 [ext_resource type="Texture2D" uid="uid://crrhfwyeybt73" path="res://Textures/Player/player_sprite.png" id="1_b6gjv"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_xm2l0"]
@@ -10,6 +10,9 @@ height = 22.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lvml"]
 size = Vector2(13, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_31ns3"]
+radius = 393.742
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
@@ -40,6 +43,28 @@ collision_mask = 2
 position = Vector2(1.5, 2)
 shape = SubResource("RectangleShape2D_0lvml")
 
+[node name="Attack" type="Node2D" parent="."]
+
+[node name="SpearTimer" type="Timer" parent="Attack"]
+unique_name_in_owner = true
+wait_time = 1.5
+
+[node name="SpearAttackTimer" type="Timer" parent="Attack/SpearTimer"]
+unique_name_in_owner = true
+wait_time = 0.075
+
+[node name="EnemyDetectionArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetectionArea"]
+shape = SubResource("CircleShape2D_31ns3")
+
 [connection signal="hurt" from="Hurt_Box" to="." method="_on_hurt_box_hurt"]
+[connection signal="timeout" from="Attack/SpearTimer" to="." method="_on_spear_timer_timeout"]
+[connection signal="timeout" from="Attack/SpearTimer/SpearAttackTimer" to="." method="_on_spear_attack_timer_timeout"]
+[connection signal="body_entered" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_body_entered"]
+[connection signal="body_exited" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_body_exited"]
 
 [editable path="Hurt_Box"]
